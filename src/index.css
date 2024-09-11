@@ -11,57 +11,106 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.favButton{
+
+.favButton {
   background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
   border: none;
-  width: 100%;
   cursor: pointer;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
-h1{
+h1 {
   text-align: center;
 }
 
-nav{
+nav {
   display: flex;
+  align-items: center; /* Alinea verticalmente los elementos del nav */
   width: 80vw;
-  justify-content: flex-start;
+  justify-content: space-between; /* Espacia los elementos del nav */
   padding: 1rem;
 }
 
-a{
+nav a {
   color: #000;
   text-decoration: none;
-  margin: 5px;
+  margin: 0 10px; /* Añade margen horizontal para espaciado */
+}
+
+nav a:hover {
+  color: rgb(136, 136, 136);
+}
+
+nav button {
+  background-color: rgba(136, 136, 136, 0.116);
+  padding: 10px;
+  border: none;
   cursor: pointer;
 }
-a:hover{
-  color: rgb(136, 136, 136);
-} 
 
+/* General Footer Styles */
 footer {
   display: flex;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
-  bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 100px;
+  box-sizing: border-box;
+  margin-top: 50px;
 }
 
-footer > img{
-  width: 200px;
-  margin: 0;
-}
-footer > p{
-  margin: 0;
-  padding-top: 0.7rem;
+/* Estilos para el tema oscuro */
+body.dark footer {
+  background-color: #343a40; /* Fondo oscuro */
 }
 
-form{
+body.dark .footer-left {
+  background-color: #343a40; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  padding: 1rem; /* Añade padding para que se vea bien */
+}
+
+/* Estilos para el tema claro */
+body.light footer {
+  background-color: #dddfe0; /* Fondo claro */
+}
+
+body.light .footer-left {
+  background-color: #dddfe0; /* Fondo claro */
+  color: #000; /* Texto negro */
+}
+
+/* Estilos específicos de la izquierda del footer */
+.footer-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Ajustes de espaciado y alineación */
+.footer-left p {
+  margin: 0;
+  padding-right: 1rem;
+}
+
+.footer-left img {
+  width: 200px; /* Ajusta el tamaño del logo si es necesario */
+}
+
+/* Estilos para los íconos de redes sociales en el footer */
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.social-icon {
+  width: 24px; /* Ajusta el tamaño del icono de Facebook */
+  margin-left: 1rem; /* Espacio entre iconos si agregas más en el futuro */
+}
+
+
+form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -70,37 +119,44 @@ form{
   margin: 0 auto;
 }
 
-.card{
+.card {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  width: 200px;
+  width: 300px;
   padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
 }
 
-.card:hover{
+.card:hover {
   border: 0.5px solid rgb(206, 217, 142);
 }
 
-.card-grid{
+.card-grid {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
-  width: 90vw;
+  width: 70vw;
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
 }
 
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las cartas se ajusten en una nueva línea si no caben en la fila actual */
+  gap: 1rem; /* Espacio entre las cartas */
+  padding: 1rem; /* Espacio interno alrededor del contenedor */
+  justify-content: center; /* Centra las cartas horizontalmente en el contenedor */
+}
 table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
-
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  border: 1px solid #ccc;
 }
 
 td, th {
@@ -113,10 +169,99 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.dark{
+.dark {
   background-color: #12121296;
   color: white;
 }
+
 .dark > a {
   color: white;
+}
+
+body.light {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+body.light nav {
+  background-color: #dddfe0;
+  color: #000;
+}
+
+body.light a {
+  color: #000;
+}
+
+body.light a:hover {
+  color: rgb(136, 136, 136);
+}
+
+body.dark {
+  background-color: #6e7377;
+  color: #fff;
+}
+
+body.dark nav {
+  background-color: #343a40;
+  color: #fff;
+}
+
+body.dark a {
+  color: #fff;
+}
+
+body.dark a:hover {
+  color: rgb(206, 217, 142);
+}
+
+nav {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos del nav */
+  width: auto;
+  justify-content: space-between; /* Espacia los elementos del nav */
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: var(--nav-background, #f8f9fa); /* Color de fondo del nav, cambia según el tema */
+}
+
+.logo {
+  width: 200px; /* Ajusta el tamaño del logo */
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espacio entre los enlaces y el botón */
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem; /* Espacio entre los enlaces */
+}
+
+.nav-links a {
+  color: var(--nav-link-color, #000); /* Color de texto de los enlaces, cambia según el tema */
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--nav-link-hover-color, rgb(136, 136, 136)); /* Color al pasar el mouse sobre los enlaces */
+}
+
+nav .theme-button {
+  background: none; /* Elimina el fondo del botón para solo mostrar el emoticono */
+  border: none;
+  cursor: pointer;
+  padding: 0; /* Elimina el relleno del botón */
+  font-size: 30px; /* Ajusta el tamaño del emoticono */
+}
+
+.theme-button.light {
+  background-color: #000; /* Fondo blanco en tema claro */
+  color: #fff; /* Color del emoticono negro en tema claro */
+}
+
+.theme-button.dark {
+  background-color: #fff; /* Fondo negro en tema oscuro */
+  color: #000; /* Color del emoticono blanco en tema oscuro */
 }
