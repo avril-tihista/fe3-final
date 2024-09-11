@@ -25,7 +25,7 @@ const Navbar = () => {
             <h4>Contact</h4>
           </Link>
           <Link to={routes.favs}>
-            <h4>Favoritos</h4>
+            <h4>Favs</h4>
           </Link>
         </div>
         <button onClick={changeTheme} className={buttonClass} aria-label={themeAlt}>

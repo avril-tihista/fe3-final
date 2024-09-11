@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,7 +14,7 @@ code {
 }
 
 .favButton {
-  background-color: rgba(136, 136, 136, 0.116);
+  background-color: rgba(97, 97, 97, 0.685);
   padding: 10px;
   border: none;
   cursor: pointer;
@@ -22,6 +23,10 @@ code {
 }
 
 h1 {
+  text-align: center;
+}
+
+h2, p{
   text-align: center;
 }
 
@@ -66,10 +71,14 @@ body.dark footer {
   background-color: #343a40; /* Fondo oscuro */
 }
 
-body.dark .footer-left {
+body.dark footer-left {
   background-color: #343a40; /* Fondo oscuro */
   color: #fff; /* Texto blanco */
   padding: 1rem; /* Añade padding para que se vea bien */
+}
+
+body.dark .footer-left img  {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5765%) hue-rotate(19deg) brightness(99%) contrast(106%);
 }
 
 /* Estilos para el tema claro */
@@ -107,16 +116,36 @@ body.light .footer-left {
 .social-icon {
   width: 24px; /* Ajusta el tamaño del icono de Facebook */
   margin-left: 1rem; /* Espacio entre iconos si agregas más en el futuro */
+  
 }
 
+body.light .social-icon {
+  width: 24px; /* Ajusta el tamaño del icono de Facebook */
+  margin-left: 1rem; /* Espacio entre iconos si agregas más en el futuro */
+  filter: brightness(0) saturate(100%) invert(0%) sepia(1%) saturate(7492%) hue-rotate(330deg) brightness(107%) contrast(94%);
+}
 
 form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 300px;
-  height: 100px;
-  margin: 0 auto;
+  height: 200px;
+  margin: auto;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+form input {
+  padding: 5px;
+}
+
+form button {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(224, 122, 170);
+  color: white;
 }
 
 .card {
@@ -130,7 +159,7 @@ form {
 }
 
 .card:hover {
-  border: 0.5px solid rgb(206, 217, 142);
+  border: 0.5px solid rgb(217, 142, 192);
 }
 
 .card-grid {
@@ -151,13 +180,15 @@ form {
   padding: 1rem; /* Espacio interno alrededor del contenedor */
   justify-content: center; /* Centra las cartas horizontalmente en el contenedor */
 }
-table {
+table  {
   border-collapse: collapse;
   border-spacing: 0;
-  width: 100%;
+  width: 90%;
   display: table;
   border: 1px solid #ccc;
+  margin-left: 80px;
 }
+
 
 td, th {
   border: 1px solid #dddddd;
@@ -193,7 +224,7 @@ body.light a {
 }
 
 body.light a:hover {
-  color: rgb(136, 136, 136);
+  color: rgb(217, 142, 192);;
 }
 
 body.dark {
@@ -211,7 +242,7 @@ body.dark a {
 }
 
 body.dark a:hover {
-  color: rgb(206, 217, 142);
+  color: rgb(217, 142, 192);
 }
 
 nav {
@@ -226,6 +257,10 @@ nav {
 
 .logo {
   width: 200px; /* Ajusta el tamaño del logo */
+}
+
+body.dark .logo {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5765%) hue-rotate(19deg) brightness(99%) contrast(106%);
 }
 
 .nav-content {
@@ -258,10 +293,12 @@ nav .theme-button {
 
 .theme-button.light {
   background-color: #000; /* Fondo blanco en tema claro */
+  border-radius: 5px;
   color: #fff; /* Color del emoticono negro en tema claro */
 }
 
 .theme-button.dark {
   background-color: #fff; /* Fondo negro en tema oscuro */
   color: #000; /* Color del emoticono blanco en tema oscuro */
+  border-radius: 5px;
 }
