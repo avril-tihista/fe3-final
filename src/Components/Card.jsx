@@ -14,7 +14,7 @@ const Card = ({ id, dentista }) => {
 
   return (
     <div className="card">
-      <img style={{ width: "270px" }} src="/images/doctor.jpg" alt="dentista" />
+      <img style={{ width: "300px", borderRadius: "5px" }} src="/images/doctor.jpg" alt="dentista" />
       <Link to={routes.detail + dentista.id}>
         <h3>{dentista.name}</h3>
       </Link>
