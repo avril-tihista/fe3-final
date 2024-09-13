@@ -63,7 +63,7 @@ const Form = () => {
               onChange={handleChangeEmail}
             />
             <button>Enviar</button>
-            <button onClick={reset}>Reset form</button>
+            <button onClick={reset} type="button">Reset form</button>
           </form>
 
           
