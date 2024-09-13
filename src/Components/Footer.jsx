@@ -12,13 +12,13 @@ const Footer = () => {
           <img className="social-icon" src="/images/ico-facebook.png" alt="Facebook" />
         </a>
         <a href="https://instagram.com" >
-          <img className="social-icon" src="/public/images/ico-instagram.png" alt="Instagram" />
+          <img className="social-icon" src="/images/ico-instagram.png" alt="Instagram" />
         </a>
         <a href="https://tiktok.com" >
-          <img className="social-icon" src="/public/images/ico-tiktok.png" alt="Tiktok" />
+          <img className="social-icon" src="/images/ico-tiktok.png" alt="Tiktok" />
         </a>
         <a href="https://whatsapp.com" >
-          <img className="social-icon" src="/public/images/ico-whatsapp.png" alt="whatsapp" />
+          <img className="social-icon" src="/images/ico-whatsapp.png" alt="whatsapp" />
         </a>
       </nav>
     </footer>
