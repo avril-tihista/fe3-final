@@ -22,16 +22,18 @@ function App() {
   return (
       <div className="App">
         <Navbar />
-        <Routes>
-        <Route path={routes.home} element={<Home />} />
-        <Route path={routes.contact} element={<Contact />} />
-        <Route path={routes.detail + ":id"} element={<Detail />} />
-        <Route path={routes.favs} element={<Favs />} />
-        <Route
-          path={routes.notFound}
-          element={<h1>Error 404 - Page not Found</h1>}
-        />
-      </Routes>
+        <div style={{minHeight: "78vh"}}>
+          <Routes>
+          <Route path={routes.home} element={<Home />} />
+          <Route path={routes.contact} element={<Contact />} />
+          <Route path={routes.detail + ":id"} element={<Detail />} />
+          <Route path={routes.favs} element={<Favs />} />
+          <Route
+            path={routes.notFound}
+            element={<h1>Error 404 - Page not Found</h1>}
+          />
+        </Routes>
+      </div>
       <Footer/>
       </div>
   );

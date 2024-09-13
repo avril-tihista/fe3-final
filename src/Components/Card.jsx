@@ -6,10 +6,19 @@ import { useCharStates } from "../Components/utils/global.context";
 
 
 const Card = ({ id, dentista }) => {
-  const { dispatch } = useCharStates();
+  const { state, dispatch } = useCharStates();
+
+  const isFav = state.favs.find((fav) => fav.id == dentista.id);
+
   const addFav = () => {
-    dispatch({type: "ADD_FAV", payload: dentista});
-    alert(`Dentista ${dentista.name} añadido a favoritos!`);
+    /*dispatch({type: "ADD_FAV", payload: dentista});*/
+    if (isFav) {
+      dispatch({ type: "REMOVE_FAV", payload: dentista });
+      alert(`Dentista ${dentista.name} eliminado de favoritos!`);
+    } else {
+      dispatch({ type: "ADD_FAV", payload: dentista });
+      alert(`Dentista ${dentista.name} añadido a favoritos!`);
+    }
   };
 
   return (
@@ -19,7 +28,7 @@ const Card = ({ id, dentista }) => {
         <h3>{dentista.name}</h3>
       </Link>
       <p>{dentista.username}</p>
-      <button onClick={addFav} className="favButton">⭐</button>
+      <button onClick={addFav} className="favButton">{isFav ? "🌟" : "⭐"}</button>
     </div>
   );
 };
